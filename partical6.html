@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Profile Card (Grid)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #E0E0E0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: grid;
+            gap: 10px;
+        }
+
+        .section {
+            padding: 20px;
+            color: rgb(99, 27, 27);
+        }
+
+        .profile {
+            background-color: #4a7c59;
+            display: grid;
+            place-items: center;
+        }
+
+        .profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .name {
+            background-color: #3b5998;
+        }
+
+        .name h2 {
+            margin: 0;
+        }
+
+        .name p {
+            margin: 5px 0 0 0;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        .summary {
+            background-color: #a7620e;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .contact {
+            background-color: #180121;
+            font-size: 14px;
+        }
+
+        .contact p {
+            margin: 5px 0;
+        }
+
+        .social {
+            background-color: #6b666d;
+            font-size: 14px;
+            display: grid;
+            place-items: center;
+            color: #093eaf;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <div class="card">
+
+            <div class="section profile">
+                <img src="google.2.png" alt="Profile Picture">
+            </div>
+
+            <div class="section name">
+                <h2>John Doe</h2>
+                <p>Web Developer at Tech Solutions</p>
+            </div>
+
+            <div class="section summary">
+                <p>Passionate about creating innovative web solutions that enhance user experience and functionality.
+                    Experienced in HTML, CSS, JavaScript, and responsive design.</p>
+            </div>
+
+            <div class="section contact">
+                <p><b>Email:</b> john.doe@example.com</p>
+                <p><b>Phone:</b> (123) 456-7890</p>
+            </div>
+
+            <div class="section social">
+                <p>Twitter | LinkedIn</p>
+            </div>
+        </div>
+    </fieldset>
+</body>
+
+</html>

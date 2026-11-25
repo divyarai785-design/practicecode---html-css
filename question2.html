@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Programming Laboratory</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            margin: 0;
+        }
+
+        .start {
+            background-color: #425780;
+            color: white;
+            padding: 25px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .finish {
+            font-size: 18px;
+            margin-top: 5px;
+        }
+
+        .name-section {
+            margin-top: 25px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            padding: 10px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 18px;
+            border: none;
+            background-color: #555;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: black;
+        }
+
+        #greeting {
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .feedback-box {
+            background: white;
+            width: 350px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        .feedback-box h3 {
+            text-align: left;
+        }
+
+        .sahoo {
+            margin: 5px;
+        }
+
+
+        .submit-btn {
+            width: 100%;
+            margin-top: 15px;
+            background-color: #222;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background: black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="start">
+        Lovely Professional University, School of Computer Science & Engineering
+        <div class="finish">Subject: Internet Programming Laboratory</div>
+    </div>
+
+    <div class="name-section">
+        <input type="text" id="username" placeholder="Enter your name">
+        <button onclick="showGreeting()">Submit</button>
+
+        <div id="greeting"></div>
+    </div>
+
+    <div class="feedback-box">
+        <h3>Student Feedback Form</h3>
+
+        <label>Email:</label><br>
+        <input type="email" id="email" placeholder="Enter Your Email"><br>
+
+        <div class="sahoo">
+            <label>Rate the Course:</label><br><br>
+            Good <input type="radio" name="rate" value="Good"> <br><br>
+            Bad <input type="radio" name="rate" value="Bad">
+        </div>
+
+        <button class="submit-button" onclick="submitFeedback()">Submit Feedback</button>
+    </div>
+
+
+    <script>
+
+        function showGreeting() {
+            let name = document.getElementById("username").value.trim();
+
+            if (name === "") {
+                alert("Please enter your name!");
+                return;
+            }
+
+            document.getElementById("greeting").innerHTML = "Hello, " + name + "!";
+        }
+
+        function submitFeedback() {
+            let email = document.getElementById("email").value.trim();
+            let rating = document.querySelector('input[name="rate"]:checked');
+
+            if (email === "" || !email.includes("@")) {
+                alert("Please enter a valid email!");
+                return;
+            }
+
+            if (!rating) {
+                alert("Please select Good or Bad rating!");
+                return;
+            }
+
+            alert("Feedback Submitted Successfully!");
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        .divya {
+            background-color: blue;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .divya ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .divya li {
+            display: inline-block;
+            margin: 0 25px;
+        }
+
+        .divya a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+
+        .Abc1 {
+            background-color: white;
+            width: 350px;
+            margin: 40px auto;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 15px rgba(10, 10, 10, 0.2);
+            text-align: right;
+        }
+
+        .Abc1 h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #333;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="divya">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Projects</a></li>
+        </ul>
+    </div>
+
+
+    <div class="Abc1">
+        <h2>Registration Form</h2>
+
+        <input type="text" id="mobile" placeholder="Enter Mobile Number">
+        <input type="password" id="password" placeholder="Enter Password">
+        <input type="password" id="confirm" placeholder="Confirm Password">
+
+        <button onclick="validateForm()">Submit</button>
+    </div>
+
+
+    <script>
+        function validateForm() {
+
+            let mobile = document.getElementById("mobile").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let confirmPass = document.getElementById("confirm").value.trim();
+
+            if (mobile.length !== 10 || isNaN(mobile)) {
+                alert("Mobile number must be 10 digits");
+                return;
+            }
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters");
+                return;
+            }
+            if (password !== confirmPass) {
+                alert("Passwords and Confirm Password do not match!");
+                return;
+            }
+            alert("Registration Successful!");
+        }
+    </script>
+
+</body>
+
+</html>
